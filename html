@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIM Installation - Gantt Interactif</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Gantt interactif pour le suivi de l'installation d'un PIM client. Visualisation des phases d'audit, conception, migration et go-live.">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="title-section">
+                <h1>Installation PIM Client</h1>
+                <p>Planification stratégique et suivi opérationnel du projet</p>
+            </div>
+            <div class="project-stats">
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-progression">0%</span>
+                    <span class="stat-label">Progression</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-weeks">0</span>
+                    <span class="stat-label">Semaines restantes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-golive">--</span>
+                    <span class="stat-label">Go-Live estimé</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="btn btn-primary" id="save-btn">Sauvegarder</button>
+                <button class="btn" id="import-btn">Exporter JSON</button>
+                <span style="width: 20px;"></span>
+                <button class="btn" id="prev-month">Précédent</button>
+                <button class="btn" id="next-month">Suivant</button>
+                <button class="btn" id="zoom-in">Zoom +</button>
+                <button class="btn" id="zoom-out">Zoom -</button>
+            </div>
+        </header>
+
+        <div class="gantt-wrapper">
+            <div class="gantt-container" id="gantt-container">
+                <!-- Sidebar for task names -->
+                <aside class="tasks-sidebar" id="tasks-sidebar">
+                    <div class="sidebar-header">Phases du Projet</div>
+                    <!-- Tasks will be injected here -->
+                </aside>
+
+                <!-- Main timeline view -->
+                <main class="timeline-view">
+                    <div class="timeline-header" id="timeline-header">
+                        <!-- Months and weeks labels will be injected here -->
+                    </div>
+                    <div class="grid-body" id="grid-body">
+                        <!-- Grid rows and task bars will be injected here -->
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
